@@ -9,6 +9,8 @@ app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
 });
 
+app.use('/api', require('./routes/api'));
+
 const mongoose = require('mysql')
 
 // const User = require('./models/users')
