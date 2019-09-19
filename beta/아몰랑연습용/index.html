@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <head>
+    </head>
+    <body>
+
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="GenreChoice.html">GenreChoice</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="aboutOurProject.html">About</a></li>
+    </ul>
+
+        <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+            <h2>우리 프로젝트</h2>
+            <h3>대충 영화 장르 고르는 내용</h3>
+            <select id = GenreSelect>
+                <option id="melo/romance" name="movieGenre">멜로/로맨스</option>
+                <option id="thriller/criminal" name="movieGenre">스릴러/범죄</option>
+                <option id="horror/mystery" name="movieGenre">공포/미스테리</option>
+                <option id="drama" name="movieGenre">드라마</option>
+                <option id="fantasy" name="movieGenre">판타지</option>
+                <option id="comedy" name="movieGenre">코미디</option>
+            </select>
+            <input type="button" value="선택" onclick="msg()" style="height: 70px; font-size: 50px">
+
+            <div id="melo&romance" class="hidden">
+                <img src="https://movie-phinf.pstatic.net//20190115_228/1547528180168jgEP7_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20190109_149/1546998123676c6LjJ_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20180524_108/1527129319423XRTcI_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20171229_112/1514526663263n37r0_JPEG/movie_image.jpg?type=m210
+                ">
+            </div>
+
+            <div id="thriller&criminal" class="hidden">
+                <img src="https://movie-phinf.pstatic.net//20180329_2/1522287706725roSen_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20160119_278/14531650465287bcuk_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20181213_264/1544692854634ss65r_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20180312_10/1520835949152TqOUm_JPEG/movie_image.jpg?type=m210
+                ">
+            </div>
+            <div id="horror&mystery" class="hidden">
+                <img src="https://movie-phinf.pstatic.net//20160321_156/14585243498978uRh9_JPEG/movie_image.jpg?type=m210
+                ">
+                <img src="https://movie-phinf.pstatic.net//20160901_187/1472711688297YP2jH_JPEG/movie_image.jpg?type=m210
+                ">
+            </div>
+        </div>
+        <script>
+            function msg() {
+                const options = document.getElementsByName("movieGenre");
+
+                const select = document.getElementById("GenreSelect");
+                const option_value = select.options[select.selectedIndex];
+
+                const target = document.getElementById(option_value.id);
+                
+                for (let i of options) {
+                    if (i === target) {
+                        document.getElementById(i.id.replace("/", "&")).className = "";
+                    } else {
+                        document.getElementById(i.id.replace("/", "&")).className = "hidden";
+                    }
+                }
+                // .className = "";
+
+                // if (option_value == "melo/romance"){
+                //     document.getElementById('melo&romance').className = '';
+                // }
+                // else if (option_value == "thriller/criminal"){
+                //     document.getElementById('thriller&criminal').className = '';
+
+                // }
+            }
+        </script>
+        
+</html>
